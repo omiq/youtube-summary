@@ -2,7 +2,6 @@ import sys
 
 from youtube_transcript_api import YouTubeTranscriptApi
 from openai import OpenAI
-from openai_secret import openai_api_key
 from googleapiclient.discovery import build
 
 
@@ -15,7 +14,7 @@ def summarize_transcript(transcript_text):
 
     client = OpenAI(
         # Needs API key obv
-        api_key=openai_api_key,
+        api_key="openai_api_key",
     )
 
     chat_completion = client.chat.completions.create(
